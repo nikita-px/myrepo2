@@ -1,0 +1,3 @@
+09@CC-PC39 MINGW64 /s/mylocal (master)
+$ notepad pro1.txt
+
