@@ -1,0 +1,2 @@
+1.	Exercise using Git to create, track and Commit changes
+a.Create a new folder with the name of your project and initialise it as a git folder
