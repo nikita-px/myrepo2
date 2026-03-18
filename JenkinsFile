@@ -8,9 +8,7 @@ stage('Checkout') {
 
 steps {
 
-// Use the 'git' step with a 'url' parameter
-
-git url: 'https://github.com/'
+git https://github.com/nikita-px/myrepo2.git
 
 }
 
@@ -19,8 +17,6 @@ git url: 'https://github.com/'
 stage('Publish') {
 
 steps {
-
-// 'publishHTML' step takes a 'target' nested object
 
 publishHTML([
 
@@ -34,7 +30,7 @@ keepAll: false,
 
 reportDir: '.',
 
-reportFiles: 'love.html',
+reportFiles: 'htmldemo.html',
 
 reportName: 'My html report'
 
