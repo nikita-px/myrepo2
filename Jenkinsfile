@@ -1,47 +1,29 @@
 pipeline {
 
-agent any
+    agent any
 
-stages {
+    stages {
 
-stage('Checkout') {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/nikita-px/myrepo2.git'
+            }
+        }
 
-steps {
+        stage('Publish') {
+            steps {
+                publishHTML([
+                    target: [
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: '.',
+                        reportFiles: 'htmldemo.html',
+                        reportName: 'My html report'
+                    ]
+                ])
+            }
+        }
 
-git https://github.com/nikita-px/myrepo2.git
-
-}
-
-}
-
-stage('Publish') {
-
-steps {
-
-publishHTML([
-
-target: [
-
-allowMissing: true,
-
-alwaysLinkToLastBuild: false,
-
-keepAll: false,
-
-reportDir: '.',
-
-reportFiles: 'htmldemo.html',
-
-reportName: 'My html report'
-
-]
-
-])
-
-}
-
-}
-
-}
-
+    }
 }
